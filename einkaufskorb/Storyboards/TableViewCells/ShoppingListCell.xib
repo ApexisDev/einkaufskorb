@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingListCell" rowHeight="105" id="5Fo-75-kvW" customClass="ShoppingListCell" customModule="einkaufskorb" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="104.5"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Fo-75-kvW" id="Vtb-wU-ZDm">
+                <rect key="frame" x="0.0" y="0.0" width="376" height="104.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quH-qp-mpC">
+                        <rect key="frame" x="20" y="12" width="250" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="250" id="ydv-f9-1Nw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcg-RQ-f4c">
+                        <rect key="frame" x="26" y="44" width="250" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="250" id="KTf-Z4-I2Z"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqz-bb-dmL">
+                        <rect key="frame" x="26" y="71" width="250" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="250" id="JUK-es-epj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="pqz-bb-dmL" secondAttribute="bottom" constant="1.5" id="3D9-lo-2FH"/>
+                    <constraint firstItem="quH-qp-mpC" firstAttribute="leading" secondItem="Vtb-wU-ZDm" secondAttribute="leading" constant="20" symbolic="YES" id="JpP-8h-k2J"/>
+                    <constraint firstItem="hcg-RQ-f4c" firstAttribute="top" secondItem="quH-qp-mpC" secondAttribute="bottom" constant="8" id="KLd-dq-ilq"/>
+                    <constraint firstItem="pqz-bb-dmL" firstAttribute="top" secondItem="hcg-RQ-f4c" secondAttribute="bottom" constant="6" id="Uvj-u9-z5Z"/>
+                    <constraint firstItem="quH-qp-mpC" firstAttribute="top" secondItem="Vtb-wU-ZDm" secondAttribute="top" constant="12" id="Xkq-Ax-NNu"/>
+                    <constraint firstItem="hcg-RQ-f4c" firstAttribute="leading" secondItem="Vtb-wU-ZDm" secondAttribute="leadingMargin" constant="6" id="cFx-7o-giI"/>
+                    <constraint firstItem="pqz-bb-dmL" firstAttribute="leading" secondItem="Vtb-wU-ZDm" secondAttribute="leadingMargin" constant="6" id="wkX-aT-cF7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cellDate" destination="pqz-bb-dmL" id="K10-9A-nHc"/>
+                <outlet property="cellPlace" destination="hcg-RQ-f4c" id="apx-tu-Wqs"/>
+                <outlet property="cellTitle" destination="quH-qp-mpC" id="sdq-aH-or3"/>
+            </connections>
+            <point key="canvasLocation" x="139.13043478260872" y="-273.54910714285711"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,6 @@
+framework module Pods_einkaufskorb {
+  umbrella header "Pods-einkaufskorb-umbrella.h"
+
+  export *
+  module * { export * }
+}
