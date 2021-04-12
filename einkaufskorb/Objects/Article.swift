@@ -13,5 +13,5 @@ class Article: NSObject {
     var name:String = ""
     var category:String = ""
     var count: String = ""
-    var price: String = ""
+    var status: String = ""
 }

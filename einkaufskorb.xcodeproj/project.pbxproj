@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		422EC174661F1DBA76B3B15B /* Pods_einkaufskorb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299EDA684F9414CF0FA31235 /* Pods_einkaufskorb.framework */; };
-		CB0312F624A4922A008C525B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB0312F524A4922A008C525B /* GoogleService-Info.plist */; };
 		CB0312FC24A4A02F008C525B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0312FB24A4A02E008C525B /* SceneDelegate.swift */; };
 		CB03131524A4E5CE008C525B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB03131424A4E5CE008C525B /* SignUpViewController.swift */; };
 		CB03131724A4E5DC008C525B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB03131624A4E5DC008C525B /* LoginViewController.swift */; };
@@ -21,6 +20,7 @@
 		CB311EBA24ADAFC100BD3AFA /* Button+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB311EB924ADAFC100BD3AFA /* Button+Extension.swift */; };
 		CB41F7BF251B424100CE42CC /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB41F7BE251B424100CE42CC /* Home.swift */; };
 		CB41F7C3251B452400CE42CC /* tabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB41F7C2251B452400CE42CC /* tabBar.swift */; };
+		CB6A1E522620E848005985B3 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A1E512620E848005985B3 /* StyledButton.swift */; };
 		CB8446DB24ADE94D00412306 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8446DA24ADE94D00412306 /* Utilities.swift */; };
 		CB8446F52516117100412306 /* SharedLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8446F42516117100412306 /* SharedLists.swift */; };
 		CB8446FB2516151B00412306 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8446FA2516151B00412306 /* HomeViewController.swift */; };
@@ -28,6 +28,7 @@
 		CBAB369924A0E84B00DB8201 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBAB369724A0E84B00DB8201 /* Main.storyboard */; };
 		CBAB369B24A0E85000DB8201 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBAB369A24A0E85000DB8201 /* Assets.xcassets */; };
 		CBAB369E24A0E85000DB8201 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBAB369C24A0E85000DB8201 /* LaunchScreen.storyboard */; };
+		CBC8318A261A44AB009CEB08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBC83189261A44AB009CEB08 /* GoogleService-Info.plist */; };
 		CBC950E82521EEFD0096EA1F /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC950E72521EEFD0096EA1F /* List.swift */; };
 		CBC950F82525F6410096EA1F /* ShoppingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC950F72525F6410096EA1F /* ShoppingListCell.swift */; };
 		CBFAED3C2563B19000A05327 /* CreateShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFAED3B2563B19000A05327 /* CreateShoppingListViewController.swift */; };
@@ -47,7 +48,6 @@
 		299EDA684F9414CF0FA31235 /* Pods_einkaufskorb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_einkaufskorb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07945AF9BD4A90E887F222B /* Pods-einkaufskorb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-einkaufskorb.release.xcconfig"; path = "Target Support Files/Pods-einkaufskorb/Pods-einkaufskorb.release.xcconfig"; sourceTree = "<group>"; };
 		C18A70EFAC50D1EB959F0D6D /* Pods-einkaufskorb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-einkaufskorb.debug.xcconfig"; path = "Target Support Files/Pods-einkaufskorb/Pods-einkaufskorb.debug.xcconfig"; sourceTree = "<group>"; };
-		CB0312F524A4922A008C525B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB0312F924A498A0008C525B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB0312FB24A4A02E008C525B /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CB03131424A4E5CE008C525B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +61,7 @@
 		CB311EB924ADAFC100BD3AFA /* Button+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Extension.swift"; sourceTree = "<group>"; };
 		CB41F7BE251B424100CE42CC /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		CB41F7C2251B452400CE42CC /* tabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBar.swift; sourceTree = "<group>"; };
+		CB6A1E512620E848005985B3 /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
 		CB8446DA24ADE94D00412306 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		CB8446E924B35FBA00412306 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		CB8446EA24B35FBB00412306 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		CBAB369824A0E84B00DB8201 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBAB369A24A0E85000DB8201 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBAB369D24A0E85000DB8201 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CBC83189261A44AB009CEB08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CBC950E72521EEFD0096EA1F /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		CBC950F72525F6410096EA1F /* ShoppingListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListCell.swift; sourceTree = "<group>"; };
 		CBFAED3B2563B19000A05327 /* CreateShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateShoppingListViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		CBAB368524A0E84B00DB8201 = {
 			isa = PBXGroup;
 			children = (
+				CBC83189261A44AB009CEB08 /* GoogleService-Info.plist */,
 				CBAB369024A0E84B00DB8201 /* einkaufskorb */,
 				CBAB368F24A0E84B00DB8201 /* Products */,
 				3C520233BEC36E5B4AB1632A /* Pods */,
@@ -207,7 +210,6 @@
 				CB03131124A4E5A2008C525B /* ViewControllers */,
 				CB0312FE24A4B8B1008C525B /* Storyboards */,
 				CBAB369A24A0E85000DB8201 /* Assets.xcassets */,
-				CB0312F524A4922A008C525B /* GoogleService-Info.plist */,
 				CB0312F924A498A0008C525B /* Info.plist */,
 			);
 			path = einkaufskorb;
@@ -266,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				CB41F7C2251B452400CE42CC /* tabBar.swift */,
+				CB6A1E512620E848005985B3 /* StyledButton.swift */,
 			);
 			path = Styling;
 			sourceTree = "<group>";
@@ -359,11 +362,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBAB369E24A0E85000DB8201 /* LaunchScreen.storyboard in Resources */,
-				CB0312F624A4922A008C525B /* GoogleService-Info.plist in Resources */,
 				CBAB369B24A0E85000DB8201 /* Assets.xcassets in Resources */,
 				CBFDDD1B2565303A009F03A5 /* ShoppingListCell.xib in Resources */,
 				CB1CFB38256D1DF60026804A /* ArticleTableViewCell.xib in Resources */,
 				CBAB369924A0E84B00DB8201 /* Main.storyboard in Resources */,
+				CBC8318A261A44AB009CEB08 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +445,7 @@
 				CBC950F82525F6410096EA1F /* ShoppingListCell.swift in Sources */,
 				CB03131B24A4F645008C525B /* Constants.swift in Sources */,
 				CBFDDD012563DA02009F03A5 /* Validation.swift in Sources */,
+				CB6A1E522620E848005985B3 /* StyledButton.swift in Sources */,
 				CB41F7BF251B424100CE42CC /* Home.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

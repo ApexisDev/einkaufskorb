@@ -14,4 +14,5 @@ class List: NSObject {
     var createdBy:String = ""
     var date: String = ""
     var place: String = ""
+    var status: String = ""
 }

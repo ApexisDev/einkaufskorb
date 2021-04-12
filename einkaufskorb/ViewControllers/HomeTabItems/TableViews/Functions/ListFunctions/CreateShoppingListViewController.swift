@@ -102,7 +102,7 @@ class CreateShoppingListViewController: UIViewController {
         let place = ShoppingPlaceTextField.text ?? ""
         let date = dateFormatter.string(from:shoppingListDatePicker.date)
         
-        let data = ["date": date, "id": UUID().uuidString, "location": place, "owner": Auth.auth().currentUser?.uid ?? "", "title": name] as [String : Any]
+        let data = ["date": date, "id": UUID().uuidString, "location": place, "owner": Auth.auth().currentUser?.uid ?? "", "title": name, "status": "notCompleted"] as [String : Any]
         
         return data
     }

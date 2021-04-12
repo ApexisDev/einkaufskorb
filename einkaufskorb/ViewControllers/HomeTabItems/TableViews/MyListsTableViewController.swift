@@ -12,6 +12,8 @@ class MyListsTableViewController: UITableViewController {
     
     static let identifier = "TableViewController"
     var lists:[List] = [List]()
+    var listsDict:[String: [List]] = [:]
+    var status = ["notCompleted", "completed"]
     var dataOperations: DatabaseOperations?
     var selectedRowIndex: NSIndexPath = NSIndexPath(row: -1, section: 0)
  
@@ -54,6 +56,7 @@ class MyListsTableViewController: UITableViewController {
         guard let articlesTableViewController = storyboard?.instantiateViewController(identifier: ArticleTableViewController.identifier) as? ArticleTableViewController else {
             return
         }
+        
         let currentList = indexPath.row
         let listName : String = self.lists[currentList].title
         articlesTableViewController.title = listName
@@ -69,50 +72,81 @@ class MyListsTableViewController: UITableViewController {
     }
     // Number of Displayed Lists
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return lists.count
+        switch section {
+        case 0:
+            return listsDict["notCompleted"]?.count ?? 0
+        default:
+            return listsDict["completed"]?.count ?? 0
+        }
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ShoppingListCell.self, for: indexPath)
+        
+        var values: [List] = []
+        switch indexPath.section {
+        case 0:
+            values = listsDict["notCompleted"] ?? []
+        default:
+            values = listsDict["completed"] ?? []
+        }
+        
         // Customize the cell so it shows all important data
-        cell.setCell(lists[indexPath.row])
+        cell.setCell(values[indexPath.row])
         return cell
     }
+    
+    // MARK: Swipe Gestures
     // Function to delete cells
-    private func delete(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .destructive, title: "Delete") {
-        [weak self] (_, _, _)
-            in guard let self = self else {
-                return }
-            DatabaseOperations().delete(id: self.lists[indexPath.row].id)
-            self.lists.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            _ = self.tableView(self.tableView, numberOfRowsInSection: self.lists.count)
-            self.tableView.reloadData()
-        }
-        return action
+    private func delete(indexPath: IndexPath) {
+        
+        let documentID = lists[indexPath.row].id
+        print(documentID)
+        //DatabaseOperations().deleteList(id: documentID)
     }
     // Function to edit cells
-    private func edit(rowIndexPathAt indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .normal, title: "Edit") {
-            [weak self](_, _, _) in
-            guard let self = self else {
-                return
-            }
-            self.transitionToEditListView(indexPath: indexPath.row)
-        }
-        return action
+    private func edit(indexPath: IndexPath) {
+        self.transitionToEditListView(indexPath: indexPath.row)
+    }
+    
+    private func putListBackOnNotCompleted(indexPath: IndexPath){
+        let documentID = lists[indexPath.row].id
+        DatabaseOperations().updateListStatus(documentID: documentID, newStatus: "notCompleted")
     }
     // Swipe left
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = self.delete(rowIndexPathAt: indexPath)
-        let swipe =  UISwipeActionsConfiguration(actions: [delete])
-        return swipe
+        let deleteListAction = UIContextualAction(style: .normal,
+                                                      title: "") { [weak self] (action, view, completionHandler) in
+            self?.delete(indexPath: indexPath)
+                                                          completionHandler(true)
+        }
+        deleteListAction.image = UIImage(systemName: "trash.fill")
+        deleteListAction.backgroundColor = .systemRed
+        return UISwipeActionsConfiguration(actions: [deleteListAction])
     }
     // Swipe right
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let edit = self.edit(rowIndexPathAt: indexPath)
-        let swipe = UISwipeActionsConfiguration(actions: [edit])
-        return swipe
+        
+        if(indexPath.section == 0) {
+            let editListAction = UIContextualAction(style: .normal,
+                                                          title: "") { [weak self] (action, view, completionHandler) in
+                self?.edit(indexPath: indexPath)
+                completionHandler(true)
+            }
+            editListAction.image = UIImage(systemName: "pencil")
+            editListAction.backgroundColor = .systemGray
+            return UISwipeActionsConfiguration(actions: [editListAction])
+        } else {
+            let putListBackOnNotCompletedAction = UIContextualAction(style: .normal,
+                                                                     title: "") { [weak self] (action, view, completionHandler) in
+                           self?.putListBackOnNotCompleted(indexPath: indexPath)
+                           completionHandler(true)
+            }
+            putListBackOnNotCompletedAction.image = UIImage(systemName: "text.badge.xmark")
+            putListBackOnNotCompletedAction.backgroundColor = .systemGray
+            return UISwipeActionsConfiguration(actions: [putListBackOnNotCompletedAction])
+        }
+        
+        
     }
     // Display Editing List View
     func transitionToEditListView(indexPath: Int){
@@ -126,10 +160,22 @@ class MyListsTableViewController: UITableViewController {
         editViewController.list = self.lists[indexPath]
         navigationController?.pushViewController(editViewController, animated: true)
     }
+    // MARK: Sections
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return listsDict.count
+    }
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? "Not Completed" : "Completed"
+    }
+    
 }
 extension MyListsTableViewController: DatabaseOperationsDelegate {
     func updateData(lists: [List]) {
         self.lists = lists
+        
+        listsDict["notCompleted"] = lists.filter{$0.status == "notCompleted"}
+        listsDict["completed"] = lists.filter{$0.status == "completed"}
+
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
         }

@@ -49,17 +49,9 @@ class DatabaseOperations: NSObject {
                     print("Error creating article")
                 }
             }
-            /*
-        db.collection("lists").document(documentID).collection("articles").document(articleID)
-            .setData(data){error in
-                if error != nil {
-                    print ("Error creating article")
-                }
-                print ("Article successfully created")
-            }
- */
     }
     
+    // Create Document to Display Shopping List Data
     func createList(data: [String: Any]) {
         
         guard let id: String = data["id"] as? String else {
@@ -72,6 +64,8 @@ class DatabaseOperations: NSObject {
         }
         
     }
+    
+    // Function to update data displayed in View Controller
     func update() {
         db.collection("lists")
             .addSnapshotListener{ documentSnapshot, error in
@@ -103,6 +97,7 @@ class DatabaseOperations: NSObject {
                     list.title = document.get("title") as? String ?? ""
                     list.date = document.get("date") as? String ?? ""
                     list.place = document.get("location") as? String ?? ""
+                    list.status = document.get("status") as? String ?? ""
                     self.lists.append(list)
                 }
                 self.delegate?.updateData(lists: self.lists)
@@ -123,16 +118,29 @@ class DatabaseOperations: NSObject {
                     article.id = document.documentID
                     article.name = document.get("name") as? String ?? ""
                     article.count = document.get("count") as? String ?? ""
-                    article.price = document.get("price") as? String ?? ""
                     article.category = document.get("category") as? String ?? ""
+                    article.status = document.get("status") as? String ?? ""
                     self.articles.append(article)
                 }
                 self.articleDelegate?.updateArticles(articles: self.articles)
             }
     }
     
-    func delete(id: String){
+    func deleteList(id: String){
         db.collection("lists").document(id)
             .delete()
     }
+    
+    func deleteArticle(documentID: String, articleId: String){
+        db.collection("lists").document(documentID).collection("articles").document(articleId).delete()
+    }
+    
+    func updateStatus(documentID: String, articleID: String, newStatus: String) {
+        db.collection("lists").document(documentID).collection("articles").document(articleID).setData(["status": newStatus], merge: true)
+    }
+    
+    func updateListStatus(documentID: String, newStatus: String){
+        db.collection("lists").document(documentID).setData(["status": newStatus], merge: true)
+    }
+    
 }

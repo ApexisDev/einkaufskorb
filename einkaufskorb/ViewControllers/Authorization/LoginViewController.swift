@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
         didSet{
             //emailTextField.underlined()
             emailTextField.placeholder = NSLocalizedString("email", comment: "")
+            emailTextField.textColor = UIColor.black
         }
     }
     
