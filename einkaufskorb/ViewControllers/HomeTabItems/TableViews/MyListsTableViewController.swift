@@ -56,12 +56,20 @@ class MyListsTableViewController: UITableViewController {
         guard let articlesTableViewController = storyboard?.instantiateViewController(identifier: ArticleTableViewController.identifier) as? ArticleTableViewController else {
             return
         }
+        // TODO: Liste aus Dictionary holen
         
-        let currentList = indexPath.row
-        let listName : String = self.lists[currentList].title
-        articlesTableViewController.title = listName
-        articlesTableViewController.list = self.lists[currentList]
-        self.navigationController?.pushViewController(articlesTableViewController, animated: true)
+        switch indexPath.section {
+        case 0:
+            let currentList = self.listsDict["notCompleted"]?[indexPath.row]
+            articlesTableViewController.title = currentList?.title
+            articlesTableViewController.list = currentList
+            self.navigationController?.pushViewController(articlesTableViewController, animated: true)
+        default:
+            let currentList = self.listsDict["completed"]?[indexPath.row]
+            articlesTableViewController.title = currentList?.title
+            articlesTableViewController.list = currentList
+            self.navigationController?.pushViewController(articlesTableViewController, animated: true)
+        }
     }
     // Table cell height
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -169,6 +177,8 @@ class MyListsTableViewController: UITableViewController {
     }
     
 }
+
+// MARK: Extension
 extension MyListsTableViewController: DatabaseOperationsDelegate {
     func updateData(lists: [List]) {
         self.lists = lists

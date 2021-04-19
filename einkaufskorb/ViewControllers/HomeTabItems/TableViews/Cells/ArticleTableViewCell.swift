@@ -24,11 +24,6 @@ class ArticleTableViewCell: UITableViewCell, Reusable {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var addedByLabel: UILabel!
-    @IBOutlet weak var bottomView: UIView! {
-        didSet {
-            bottomView.isHidden = true
-        }
-    }
     
     
     override func awakeFromNib() {
@@ -66,15 +61,15 @@ class ArticleTableViewCell: UITableViewCell, Reusable {
     
     
 }
-extension UIView {
-    var parentViewController: UIViewController? {
-        var parentResponder: UIResponder? = self
-        while parentResponder != nil {
-            parentResponder = parentResponder!.next
-            if parentResponder is UIViewController {
-                return parentResponder as? UIViewController
-            }
-        }
-        return nil
-    }
-}
+//extension UIView {
+//    var parentViewController: UIViewController? {
+//        var parentResponder: UIResponder? = self
+//        while parentResponder != nil {
+//            parentResponder = parentResponder!.next
+//            if parentResponder is UIViewController {
+//                return parentResponder as? UIViewController
+//            }
+//        }
+//        return nil
+//    }
+//}

@@ -21,8 +21,10 @@
 		CB41F7BF251B424100CE42CC /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB41F7BE251B424100CE42CC /* Home.swift */; };
 		CB41F7C3251B452400CE42CC /* tabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB41F7C2251B452400CE42CC /* tabBar.swift */; };
 		CB6A1E522620E848005985B3 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A1E512620E848005985B3 /* StyledButton.swift */; };
+		CB6A1E572625793D005985B3 /* SharedShoppingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A1E562625793D005985B3 /* SharedShoppingListCell.swift */; };
+		CB6A1E5E2625798F005985B3 /* SharedShoppingListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6A1E5D2625798F005985B3 /* SharedShoppingListCell.xib */; };
 		CB8446DB24ADE94D00412306 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8446DA24ADE94D00412306 /* Utilities.swift */; };
-		CB8446F52516117100412306 /* SharedLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8446F42516117100412306 /* SharedLists.swift */; };
+		CB8446F52516117100412306 /* SharedListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8446F42516117100412306 /* SharedListsTableViewController.swift */; };
 		CB8446FB2516151B00412306 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8446FA2516151B00412306 /* HomeViewController.swift */; };
 		CBAB369224A0E84B00DB8201 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAB369124A0E84B00DB8201 /* AppDelegate.swift */; };
 		CBAB369924A0E84B00DB8201 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBAB369724A0E84B00DB8201 /* Main.storyboard */; };
@@ -33,7 +35,6 @@
 		CBC950F82525F6410096EA1F /* ShoppingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC950F72525F6410096EA1F /* ShoppingListCell.swift */; };
 		CBFAED3C2563B19000A05327 /* CreateShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFAED3B2563B19000A05327 /* CreateShoppingListViewController.swift */; };
 		CBFDDD012563DA02009F03A5 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFDDD002563DA02009F03A5 /* Validation.swift */; };
-		CBFDDD052563F98B009F03A5 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFDDD042563F98B009F03A5 /* Toast.swift */; };
 		CBFDDD0F2564044C009F03A5 /* DatabaseOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFDDD0E2564044C009F03A5 /* DatabaseOperations.swift */; };
 		CBFDDD1325652D22009F03A5 /* TableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFDDD1225652D22009F03A5 /* TableView+Reusable.swift */; };
 		CBFDDD1725652D80009F03A5 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFDDD1625652D80009F03A5 /* Reusable.swift */; };
@@ -62,12 +63,14 @@
 		CB41F7BE251B424100CE42CC /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		CB41F7C2251B452400CE42CC /* tabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBar.swift; sourceTree = "<group>"; };
 		CB6A1E512620E848005985B3 /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
+		CB6A1E562625793D005985B3 /* SharedShoppingListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedShoppingListCell.swift; sourceTree = "<group>"; };
+		CB6A1E5D2625798F005985B3 /* SharedShoppingListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SharedShoppingListCell.xib; sourceTree = "<group>"; };
 		CB8446DA24ADE94D00412306 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		CB8446E924B35FBA00412306 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		CB8446EA24B35FBB00412306 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CB8446EC24B35FE800412306 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		CB8446EE24B3604200412306 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		CB8446F42516117100412306 /* SharedLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLists.swift; sourceTree = "<group>"; };
+		CB8446F42516117100412306 /* SharedListsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedListsTableViewController.swift; sourceTree = "<group>"; };
 		CB8446FA2516151B00412306 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CBAB368E24A0E84B00DB8201 /* einkaufskorb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = einkaufskorb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBAB369124A0E84B00DB8201 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,7 +82,6 @@
 		CBC950F72525F6410096EA1F /* ShoppingListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListCell.swift; sourceTree = "<group>"; };
 		CBFAED3B2563B19000A05327 /* CreateShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateShoppingListViewController.swift; sourceTree = "<group>"; };
 		CBFDDD002563DA02009F03A5 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		CBFDDD042563F98B009F03A5 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		CBFDDD0E2564044C009F03A5 /* DatabaseOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseOperations.swift; sourceTree = "<group>"; };
 		CBFDDD1225652D22009F03A5 /* TableView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Reusable.swift"; sourceTree = "<group>"; };
 		CBFDDD1625652D80009F03A5 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				CBFDDD1A2565303A009F03A5 /* ShoppingListCell.xib */,
 				CB1CFB2E256CF5C60026804A /* ArticleTableViewCell.xib */,
+				CB6A1E5D2625798F005985B3 /* SharedShoppingListCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 		CB41F7C6251DECB800CE42CC /* TableViews */ = {
 			isa = PBXGroup;
 			children = (
+				CB8446F42516117100412306 /* SharedListsTableViewController.swift */,
 				CBFDDD2C2566A275009F03A5 /* MyListsTableViewController.swift */,
 				CBFDDEF4256BEBB1009F03A5 /* ArticlesTableViewController.swift */,
 				CBFDDEEF2567C46C009F03A5 /* Functions */,
@@ -172,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				CBFDDEE82567C28E009F03A5 /* Styling */,
-				CB8446F42516117100412306 /* SharedLists.swift */,
 				CB41F7BE251B424100CE42CC /* Home.swift */,
 				CB41F7C6251DECB800CE42CC /* TableViews */,
 			);
@@ -229,6 +232,7 @@
 			children = (
 				CBC950F72525F6410096EA1F /* ShoppingListCell.swift */,
 				CB1CFB31256D0F660026804A /* ArticleTableViewCell.swift */,
+				CB6A1E562625793D005985B3 /* SharedShoppingListCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -237,7 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				CBFDDD002563DA02009F03A5 /* Validation.swift */,
-				CBFDDD042563F98B009F03A5 /* Toast.swift */,
 				CBFDDD0E2564044C009F03A5 /* DatabaseOperations.swift */,
 			);
 			path = Services;
@@ -365,6 +368,7 @@
 				CBAB369B24A0E85000DB8201 /* Assets.xcassets in Resources */,
 				CBFDDD1B2565303A009F03A5 /* ShoppingListCell.xib in Resources */,
 				CB1CFB38256D1DF60026804A /* ArticleTableViewCell.xib in Resources */,
+				CB6A1E5E2625798F005985B3 /* SharedShoppingListCell.xib in Resources */,
 				CBAB369924A0E84B00DB8201 /* Main.storyboard in Resources */,
 				CBC8318A261A44AB009CEB08 /* GoogleService-Info.plist in Resources */,
 			);
@@ -426,6 +430,7 @@
 				CB311EBA24ADAFC100BD3AFA /* Button+Extension.swift in Sources */,
 				CB8446DB24ADE94D00412306 /* Utilities.swift in Sources */,
 				CB311EB824AB11C900BD3AFA /* Color+Extension.swift in Sources */,
+				CB6A1E572625793D005985B3 /* SharedShoppingListCell.swift in Sources */,
 				CBFDDEF5256BEBB2009F03A5 /* ArticlesTableViewController.swift in Sources */,
 				CBC950E82521EEFD0096EA1F /* List.swift in Sources */,
 				CBFDDD2D2566A275009F03A5 /* MyListsTableViewController.swift in Sources */,
@@ -438,9 +443,8 @@
 				CB03131724A4E5DC008C525B /* LoginViewController.swift in Sources */,
 				CBFDDD1725652D80009F03A5 /* Reusable.swift in Sources */,
 				CB0312FC24A4A02F008C525B /* SceneDelegate.swift in Sources */,
-				CBFDDD052563F98B009F03A5 /* Toast.swift in Sources */,
 				CBFDDD1325652D22009F03A5 /* TableView+Reusable.swift in Sources */,
-				CB8446F52516117100412306 /* SharedLists.swift in Sources */,
+				CB8446F52516117100412306 /* SharedListsTableViewController.swift in Sources */,
 				CB8446FB2516151B00412306 /* HomeViewController.swift in Sources */,
 				CBC950F82525F6410096EA1F /* ShoppingListCell.swift in Sources */,
 				CB03131B24A4F645008C525B /* Constants.swift in Sources */,

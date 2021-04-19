@@ -263,7 +263,7 @@
                     <navigationItem key="navigationItem" title="My Lists" id="ELC-tz-Njh">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="y1s-OR-bWm">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iuo-dZ-mSy">
-                                <rect key="frame" x="374" y="11" width="20" height="22"/>
+                                <rect key="frame" x="373" y="11" width="21" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="text.badge.plus" catalog="system"/>
                                 <connections>
@@ -402,20 +402,33 @@
             <point key="canvasLocation" x="1908.6956521739132" y="285.9375"/>
         </scene>
         <!--Shared Lists-->
-        <scene sceneID="3NM-2D-RCY">
+        <scene sceneID="btI-mS-WSi">
             <objects>
-                <viewController storyboardIdentifier="SharedLists" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zJA-ls-tNb" customClass="SharedLists" customModule="einkaufskorb" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="SdK-6g-c4A">
+                <tableViewController id="aEE-BM-eqi" customClass="SharedListsTableViewController" customModule="einkaufskorb" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EuP-cK-X4T">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Di8-sW-o7G"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Shared Lists" id="b9a-Ok-TVp"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Br6-MD-Nrb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="nYY-sy-2Zt">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nYY-sy-2Zt" id="BpP-OL-gnh">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aEE-BM-eqi" id="Zoi-lV-eWC"/>
+                            <outlet property="delegate" destination="aEE-BM-eqi" id="Fg9-25-60r"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Shared Lists" id="6Hm-Yz-bKy"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="20l-KL-AmG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6558" y="-500"/>
+            <point key="canvasLocation" x="6670" y="-500"/>
         </scene>
         <!--Create Shopping List View Controller-->
         <scene sceneID="YVG-sd-aiN">
@@ -620,17 +633,20 @@
             </objects>
             <point key="canvasLocation" x="5700" y="990"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Shared Lists-->
         <scene sceneID="iI0-gk-ZVw">
             <objects>
-                <navigationController id="b9z-Qr-B0u" sceneMemberID="viewController">
+                <navigationController title="Shared Lists" id="b9z-Qr-B0u" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="RqA-nO-xCq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Dx-aw-d1z">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S7a-fR-wJH">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
-                        <segue destination="zJA-ls-tNb" kind="relationship" relationship="rootViewController" id="v9i-LJ-HOD"/>
+                        <segue destination="aEE-BM-eqi" kind="relationship" relationship="rootViewController" id="G5e-AT-hSL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28o-YE-8h4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

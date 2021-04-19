@@ -68,7 +68,7 @@ class EditListViewController: UIViewController {
         let place = listPlaceTextField.text ?? ""
         let date = dateFormatter.string(from:shoppingDatePicker.date)
         
-        let data = ["date": date, "id": list?.id ?? "", "location": place, "owner": Auth.auth().currentUser?.uid ?? "", "title": name, "status": "notCompleted"] as [String : Any]
+        let data = ["date": date, "id": list?.id ?? "", "location": place, "owner": Auth.auth().currentUser?.uid ?? "", "title": name, "status": "notCompleted", "sharedWith": []] as [String : Any]
         return data
     }
     

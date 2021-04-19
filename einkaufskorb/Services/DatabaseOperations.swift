@@ -34,10 +34,6 @@ class DatabaseOperations: NSObject {
     
     // Create Document to Display Article Data
     func createArticle(data: [String: Any], documentID: String?){
-        guard let articleID: String = data["id"] as? String else {
-            print("Error @articleID")
-            return
-        }
         guard let documentID: String = documentID else {
             print ("Error LdocumentID")
             return
@@ -98,11 +94,58 @@ class DatabaseOperations: NSObject {
                     list.date = document.get("date") as? String ?? ""
                     list.place = document.get("location") as? String ?? ""
                     list.status = document.get("status") as? String ?? ""
+                    list.sharedWith = document.get("sharedWith") as? [String] ?? []
+                    list.owner = document.get("owner") as? String ?? ""
                     self.lists.append(list)
                 }
                 self.delegate?.updateData(lists: self.lists)
             }
     }
+    func getOwnerName(owner: String) {
+        let docRef = db.collection("users").document(owner)
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let firstName = document.get("firstname")
+                let lastName = document.get("lastname")
+                
+                let username = "\(firstName) \(lastName)"
+                print(username)
+                
+            }
+        }
+        
+    }
+    
+    func registerSharedListsListener() {
+        guard let authID = auth.currentUser?.uid else {
+            self.lists.removeAll()
+            self.delegate?.updateData(lists: lists)
+            return
+        }
+        
+        db.collection("lists").whereField("sharedWith", arrayContains: authID)
+            .addSnapshotListener{ documentSnapshot, error in
+                self.lists.removeAll()
+                guard error == nil else {
+                    print("Error getting documents: \(error?.localizedDescription ?? "Error")")
+                    self.delegate?.updateData(lists: self.lists)
+                    return
+                }
+                for document in documentSnapshot?.documents ?? [] {
+                    let list = List()
+                    list.id = document.documentID
+                    list.title = document.get("title") as? String ?? ""
+                    list.date = document.get("date") as? String ?? ""
+                    list.place = document.get("location") as? String ?? ""
+                    list.status = document.get("status") as? String ?? ""
+                    list.sharedWith = document.get("sharedWith") as? [String] ?? []
+                    self.lists.append(list)
+                }
+                self.delegate?.updateData(lists: self.lists)
+            }
+    }
+    
     func registerArticleListeer(documentID: String){
         db.collection("lists").document(documentID).collection("articles")
             
@@ -124,6 +167,9 @@ class DatabaseOperations: NSObject {
                 }
                 self.articleDelegate?.updateArticles(articles: self.articles)
             }
+    }
+    func getUserID() -> String {
+        return auth.currentUser?.uid ?? ""
     }
     
     func deleteList(id: String){

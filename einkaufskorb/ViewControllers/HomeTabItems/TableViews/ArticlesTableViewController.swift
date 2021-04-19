@@ -32,7 +32,7 @@ class ArticleTableViewController: UITableViewController {
     var articles: [Article] = []
     var articlesDict: [String: [Article]] = [:]
 
-    var status = ["onList", "inCart"]
+    
     
     private var dataOperations: DatabaseOperations?
     var selectedRowIndex: NSIndexPath = NSIndexPath(row: -1, section: 0)
@@ -40,13 +40,13 @@ class ArticleTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNavigationBar()
+        if list?.status != "completed" {
+            setupNavigationBar()
+        }
         
         dataOperations = DatabaseOperations()
         dataOperations?.registerArticleListeer(documentID: list?.id ?? "")
         dataOperations?.articleDelegate = self
-        
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: UIApplication.shared.keyWindow!.safeAreaInsets.bottom, right: 0.0);
         
         self.tableView.register(ArticleTableViewCell.self)
     }
